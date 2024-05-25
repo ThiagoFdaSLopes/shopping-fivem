@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MutableRefObject, useEffect, useRef } from 'react';
-import { noop } from '../misc/misc';
+import { MutableRefObject, useEffect, useRef } from "react";
+import { noop } from "../misc/misc";
 
 interface NuiMessageData<T = unknown> {
   action: string;
@@ -43,8 +43,8 @@ export const useNuiEvent = <T = any>(
       }
     };
 
-    window.addEventListener('message', eventListener);
+    window.addEventListener("message", eventListener);
     // Remove Event Listener on component cleanup
-    return () => window.removeEventListener('message', eventListener);
+    return () => window.removeEventListener("message", eventListener);
   }, [action]);
 };

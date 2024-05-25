@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface DebugEvent<T = any> {
   action: string;
   data: T;
@@ -14,7 +15,7 @@ export const debugData = (events: DebugEvent[], timer = 1000): void => {
   for (const event of events) {
     setTimeout(() => {
       window.dispatchEvent(
-        new MessageEvent('message', {
+        new MessageEvent("message", {
           data: {
             action: event.action,
             data: event.data,
